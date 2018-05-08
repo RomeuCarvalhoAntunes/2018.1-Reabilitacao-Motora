@@ -10,6 +10,9 @@ echo "========================================"
 echo "Attempting to activate Unity"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity -batchmode -serial $UNITY_KEY -username $UNITY_LOGIN -password $UNITY_PASSWORD -logFile /dev/stdout -quit
 echo "========================================"
+echo "Attempting to Test $project"
+./Reabilitacao-Motora/Assets/Scripts/travis_tests.sh
+echo "========================================"
 echo "Attempting to build $project for OSX"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity -batchmode -logFile /dev/stdout -projectPath $(pwd) -buildOSXUniversalPlayer "Build/osx/$project.app" -quit
 echo "========================================"
